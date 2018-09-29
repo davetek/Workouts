@@ -10,6 +10,11 @@ import UIKit
 
 class ExerciseDetailsViewController: UIViewController {
     
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var typeField: UITextField!
+    @IBOutlet var referenceField: UITextField!
+    @IBOutlet var descriptionField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

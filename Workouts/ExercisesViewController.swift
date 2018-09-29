@@ -29,7 +29,7 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
         //Set text on cell
         let exerciseItem = exercises.exerciseList[indexPath.row]
         
-        cell.textLabel?.text   = exerciseItem
+        cell.textLabel?.text = exerciseItem
         return cell
     }
     
