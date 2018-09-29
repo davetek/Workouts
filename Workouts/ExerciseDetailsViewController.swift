@@ -10,12 +10,17 @@ import UIKit
 
 class ExerciseDetailsViewController: UIViewController {
     
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var typeField: UITextField!
-    @IBOutlet var referenceField: UITextField!
+    var exerciseName: String = "Exercise Not Selected"
+    
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var typeTextField: UITextField!
+    @IBOutlet var referenceTextField: UITextField!
     @IBOutlet var descriptionField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.text = exerciseName
     }
+    
+    
 }

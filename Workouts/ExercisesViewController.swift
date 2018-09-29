@@ -10,6 +10,7 @@ import UIKit
 
 class ExercisesViewController: UIViewController, UITableViewDataSource {
     
+    
     var exercises: Exercises!
     
     @IBOutlet var tableView: UITableView!
@@ -37,5 +38,21 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // if triggered segue is the 'showExerciseDetails' segue
+        switch segue.identifier {
+        case "showExerciseDetails"?:
+            //Figure out which row was just tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+                // get item associated with this row
+                let exercise = exercises.exerciseList[row]
+                let exerciseDetailsViewController = segue.destination as! ExerciseDetailsViewController
+                exerciseDetailsViewController.exerciseName = exercise
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
     }
 }

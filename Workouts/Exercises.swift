@@ -9,5 +9,5 @@
 import Foundation
 
 class Exercises {
-    var exerciseList = ["Regular Pushup", "Wide-Angle Pushup", "Tricep Pushup", "Decline Pushup", "Handstand Upright", "Handstand Supported", "Sit-up"]
+    var exerciseList = ["Regular Pushup", "Wide-Angle Pushup", "Tricep Pushup", "Decline Pushup", "Handstand from Squat", "Handstand Supported", "Sit-up"]
 }
