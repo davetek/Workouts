@@ -11,7 +11,7 @@ import UIKit
 class ExercisesViewController: UIViewController, UITableViewDataSource {
     
     
-    var exercises: Exercises!
+    var exerciseData: ExerciseData!
     
     @IBOutlet var tableView: UITableView!
     
@@ -20,7 +20,7 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercises.exerciseList.count
+        return exerciseData.exerciseList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,7 +28,7 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExercisesPrototypeCell", for: indexPath)
         
         //Set text on cell
-        let exerciseItem = exercises.exerciseList[indexPath.row]
+        let exerciseItem = exerciseData.exerciseList[indexPath.row]
         
         cell.textLabel?.text = exerciseItem
         return cell
@@ -47,7 +47,7 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
             //Figure out which row was just tapped
             if let row = tableView.indexPathForSelectedRow?.row {
                 // get item associated with this row
-                let exercise = exercises.exerciseList[row]
+                let exercise = exerciseData.exerciseList[row]
                 let exerciseDetailsViewController = segue.destination as! ExerciseDetailsViewController
                 exerciseDetailsViewController.exerciseName = exercise
             }

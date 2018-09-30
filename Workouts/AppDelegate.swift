@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Create Exercises instance
-        let exercises = Exercises()
+        let exerciseData = ExerciseData()
         
         // Access ExercisesViewController and set it Exercises
         let navController = window!.rootViewController as! UINavigationController
         let exercisesController = navController.topViewController as! ExercisesViewController
-        exercisesController.exercises = exercises
+        exercisesController.exerciseData = exerciseData
         
         return true
     }

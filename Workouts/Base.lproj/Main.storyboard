@@ -66,16 +66,19 @@
             </objects>
             <point key="canvasLocation" x="103.2" y="118.29085457271366"/>
         </scene>
-        <!--Exercises Performed View Controller-->
+        <!--Exercise Plans View Controller-->
         <scene sceneID="Fzx-te-TLo">
             <objects>
-                <viewController id="Zwd-4x-DTO" customClass="ExercisesPerformedViewController" customModule="Workouts" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I24-mv-H2u">
+                <viewController id="Zwd-4x-DTO" customClass="ExercisePlansViewController" customModule="Workouts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o5S-cI-FzL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="7BI-gQ-zoD"/>
-                    </view>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="o5S-cI-FzL" id="0OB-Qd-X2c"/>
+                        <outlet property="view" destination="o5S-cI-FzL" id="0Ls-mf-4Em"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibA-BW-nED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ex2-MN-pa1">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
+                                <rect key="frame" x="8" y="72" width="359" height="543"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-9h-uhz">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
@@ -144,16 +147,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bTk-RW-wpa">
-                                        <rect key="frame" x="0.0" y="114" width="359" height="473"/>
+                                        <rect key="frame" x="0.0" y="114" width="359" height="429"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS3-J5-3Ab">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="473"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="429"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cId-8V-QEr">
-                                                <rect key="frame" x="96" y="0.0" width="263" height="473"/>
+                                                <rect key="frame" x="96" y="0.0" width="263" height="429"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -167,11 +170,27 @@
                                     <constraint firstItem="cId-8V-QEr" firstAttribute="leading" secondItem="usw-LX-n2t" secondAttribute="leading" id="HG4-l0-lY3"/>
                                 </constraints>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLG-tx-ISx">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="BlZ-ms-ugt">
+                                        <barButtonItem key="leftBarButtonItem" title="See Plans" id="dmd-yg-0iI">
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Make Plan" id="Rrt-pS-2qF">
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LPg-w6-Tat" firstAttribute="bottom" secondItem="ex2-MN-pa1" secondAttribute="bottom" constant="8" id="2U1-21-oUx"/>
                             <constraint firstItem="LPg-w6-Tat" firstAttribute="trailing" secondItem="ex2-MN-pa1" secondAttribute="trailing" constant="8" id="AZO-1Q-OZ3"/>
+                            <constraint firstItem="yLG-tx-ISx" firstAttribute="leading" secondItem="LPg-w6-Tat" secondAttribute="leading" id="Hvi-FA-qBb"/>
+                            <constraint firstItem="LPg-w6-Tat" firstAttribute="bottom" secondItem="yLG-tx-ISx" secondAttribute="bottom" id="V7J-uL-ZGS"/>
+                            <constraint firstItem="yLG-tx-ISx" firstAttribute="trailing" secondItem="LPg-w6-Tat" secondAttribute="trailing" id="chh-ay-Tw8"/>
+                            <constraint firstItem="yLG-tx-ISx" firstAttribute="top" secondItem="ex2-MN-pa1" secondAttribute="bottom" constant="8" id="eOF-uy-YDM"/>
                             <constraint firstItem="ex2-MN-pa1" firstAttribute="leading" secondItem="LPg-w6-Tat" secondAttribute="leading" constant="8" id="i5Q-Cn-wJ9"/>
                             <constraint firstItem="ex2-MN-pa1" firstAttribute="top" secondItem="LPg-w6-Tat" secondAttribute="top" constant="8" id="rxk-zZ-sgE"/>
                         </constraints>
