@@ -24,7 +24,7 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //create instance of UITableViewCell
+        //create instance of UITableViewCell for reuse
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExercisesPrototypeCell", for: indexPath)
         
         //Set text on cell
@@ -51,6 +51,7 @@ class ExercisesViewController: UIViewController, UITableViewDataSource {
                 let exerciseDetailsViewController = segue.destination as! ExerciseDetailsViewController
                 exerciseDetailsViewController.exerciseName = exercise
             }
+            
         default:
             preconditionFailure("Unexpected segue identifier")
         }
